@@ -48,15 +48,13 @@ def class_to_color(label):
         return classes[label]["color"]
     return [0, 0, 0]
 
-# plot the whole classification
 
-
-def show_result(result):
+def show_result(result, X_image):
     f, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 20), dpi=96)
 
     # Plot correct image:
     # Load September
-    band_sep = X_test_raw_shape[2, :, :, :3]
+    band_sep = X_image[2, :, :, :3]
     # Flip from BGR to RGB
     band_flip = np.flip(band_sep, -1)
     # Change Contrast
@@ -85,7 +83,6 @@ def show_result(result):
         1.05, 1), loc=2, borderaxespad=0.)
 
     return plt.show()
-
 # count the different classes in one result
 
 
