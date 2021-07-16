@@ -57,6 +57,9 @@ def show_result(result, X_image):
     band_sep = X_image[2, :, :, :3]
     # Flip from BGR to RGB
     band_flip = np.flip(band_sep, -1)
+    # bright
+    band_flip = band_flip + 0.3
+
     # Change Contrast
     c_fact = 2.5
     band = 0.5 + c_fact * (band_flip - 0.5)
