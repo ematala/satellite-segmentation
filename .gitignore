@@ -8,6 +8,8 @@ data/*
 
 .DS_Store
 
+catboost_info/
+
 # Virtual environment
 .venv
 venv
